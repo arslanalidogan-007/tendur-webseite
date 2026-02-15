@@ -8,49 +8,12 @@
     <title>TENDUR Wesseling | Holzkohlegrill & Anatolische Spezialitäten</title>
     <meta name="description" content="Authentische anatolische Küche in Wesseling. Spezialitäten vom Holzkohlegrill, frisch gebackenes Brot aus dem Tendur-Lehmofen. Täglich von 10:30 - 23:00 Uhr.">
     
-    <!-- Social Media Vorschau (Facebook, WhatsApp, Instagram) -->
+    <!-- Social Media Vorschau -->
     <meta property="og:type" content="restaurant.restaurant">
     <meta property="og:title" content="TENDUR Wesseling | Holzkohlegrill & Tradition">
     <meta property="og:description" content="Saftige Grillgerichte und ofenfrisches Brot aus dem Lehmofen. Besuchen Sie uns in Wesseling!">
     <meta property="og:image" content="https://arslanalidogan-007.github.io/tendur-webseite/gal/IMG-20190612-WA0001.jpg">
-    <meta property="og:url" content="https://arslanalidogan-007.github.io/tendur-webseite/">
-    <meta property="restaurant:contact_info:street_address" content="Flach-Fengler-Str. 78">
-    <meta property="restaurant:contact_info:locality" content="Wesseling">
-    <meta property="restaurant:contact_info:postal_code" content="50389">
-
-    <!-- JSON-LD für Google My Business (Local Business Schema) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Restaurant",
-      "name": "TENDUR Restaurant",
-      "image": "https://arslanalidogan-007.github.io/tendur-webseite/gal/IMG-20190612-WA0001.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Flach-Fengler-Str. 78",
-        "addressLocality": "Wesseling",
-        "postalCode": "50389",
-        "addressCountry": "DE"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 50.8268,
-        "longitude": 6.9748
-      },
-      "url": "https://arslanalidogan-007.github.io/tendur-webseite/",
-      "telephone": "+4922363312160",
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-          "opens": "10:30",
-          "closes": "23:00"
-        }
-      ],
-      "servesCuisine": "Anatolisch, Türkisch, Grill"
-    }
-    </script>
-
+    
     <!-- Tailwind CSS & Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -68,7 +31,7 @@
 </head>
 <body>
 
-    <!-- Nav -->
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 py-4 px-6 md:px-12 flex justify-between items-center card-blur border-b border-white/5">
         <div class="text-2xl brand-font font-bold tracking-widest text-white">TENDUR</div>
         <div class="hidden md:flex space-x-8 font-semibold uppercase text-[10px] tracking-[0.2em]">
@@ -80,7 +43,7 @@
         <a href="tel:022363312160" class="md:hidden text-white"><i class="fas fa-phone"></i></a>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero Sektion -->
     <section class="relative h-screen flex items-center justify-center text-center px-4 hero-bg">
         <div class="max-w-4xl">
             <span class="gold-text uppercase tracking-[0.3em] text-xs font-bold mb-4 block">Wesseling • Holzkohlegrill</span>
@@ -95,10 +58,10 @@
         </div>
     </section>
 
-    <!-- Speisekarte Auszug -->
+    <!-- Speisekarte -->
     <section id="speisekarte" class="py-24 px-6 bg-[#0c0c0c]">
         <div class="max-w-5xl mx-auto">
-            <h2 class="text-center text-4xl md:text-6xl mb-16 italic">Unsere Spezialitäten</h2>
+            <h2 class="text-center text-4xl md:text-6xl mb-16 italic text-white">Unsere Spezialitäten</h2>
             <div class="grid md:grid-cols-2 gap-12">
                 <div class="space-y-6">
                     <h3 class="text-2xl gold-text border-b border-gold/20 pb-2 mb-4 brand-font">Grill-Highlights</h3>
@@ -118,8 +81,8 @@
                         <span class="item-price font-bold transition">6.50 €</span>
                     </div>
                     <div class="menu-item flex justify-between group">
-                        <span>Künefe <p class="text-xs text-gray-500 italic">Warmes Dessert mit Käse & Sirup</p></span>
-                        <span class="item-price font-bold transition">8.50 €</span>
+                        <span>Pide Mix <p class="text-xs text-gray-500 italic">Teigschiffchen mit versch. Füllungen</p></span>
+                        <span class="item-price font-bold transition">14.50 €</span>
                     </div>
                 </div>
             </div>
@@ -132,29 +95,29 @@
     <!-- Galerie -->
     <section id="galerie" class="py-24 bg-[#0a0a0a]">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl mb-12 italic">Impressionen</h2>
+            <h2 class="text-4xl mb-12 italic text-white">Impressionen</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="aspect-square rounded-2xl overflow-hidden bg-gray-900 shadow-xl">
-                    <img src="gal/IMG-20190612-WA0001.jpg" alt="Tendur Grill" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                    <img src="gal/IMG-20190612-WA0001.jpg" alt="[Tendur Grill]" class="w-full h-full object-cover hover:scale-110 transition duration-500">
                 </div>
                 <div class="aspect-square rounded-2xl overflow-hidden bg-gray-900 shadow-xl">
-                    <img src="gal/IMG-20190612-WA0003.jpg" alt="Tendur Brot" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                    <img src="gal/IMG-20190612-WA0003.jpg" alt="[Frisches Brot]" class="w-full h-full object-cover hover:scale-110 transition duration-500">
                 </div>
                 <div class="aspect-square rounded-2xl overflow-hidden bg-gray-900 shadow-xl">
-                    <img src="gal/IMG-20190612-WA0004.jpg" alt="Vorspeisen" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                    <img src="gal/IMG-20190612-WA0004.jpg" alt="[Vorspeisen]" class="w-full h-full object-cover hover:scale-110 transition duration-500">
                 </div>
                 <div class="aspect-square rounded-2xl overflow-hidden bg-gray-900 shadow-xl">
-                    <img src="gal/IMG-20190612-WA0006.jpg" alt="Fleischgerichte" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                    <img src="gal/IMG-20190612-WA0006.jpg" alt="[Fleischgerichte]" class="w-full h-full object-cover hover:scale-110 transition duration-500">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Kontakt & Karte -->
+    <!-- Kontakt -->
     <section id="kontakt" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="grid md:grid-cols-2 gap-16">
             <div>
-                <h2 class="text-4xl mb-8 italic">Kontakt</h2>
+                <h2 class="text-4xl mb-8 italic text-white">Kontakt</h2>
                 <div class="space-y-6 text-gray-400">
                     <p><i class="fas fa-map-marker-alt gold-text mr-4"></i> Flach-Fengler-Str. 78, 50389 Wesseling</p>
                     <p><i class="fas fa-phone gold-text mr-4"></i> <a href="tel:022363312160" class="hover:text-white transition">02236 / 33 12 160</a></p>

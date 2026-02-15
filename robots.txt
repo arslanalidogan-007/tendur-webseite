@@ -1,0 +1,10 @@
+# robots.txt zu http://tendur.de
+
+User-agent: *
+Disallow: /mail/
+Disallow: /lib/
+Disallow: /dat/
+Disallow: /gal/
+Disallow: /pag/Kontakt.php
+
+Sitemap: http://tendur.de/sitemap.xml

@@ -4,30 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO & Browser Tags -->
-    <title>TENDUR Wesseling | Holzkohlegrill &amp; Anatolische Spezialit&auml;ten</title>
-    <meta name="description" content="Authentische anatolische K&uuml;che in Wesseling. Spezialit&auml;ten vom Holzkohlegrill, frisch gebackenes Brot aus dem Tendur-Lehmofen. T&auml;glich von 10:30 - 23:00 Uhr.">
+    <title>TENDUR Wesseling | Die vollständige Speisekarte</title>
     
-    <!-- Social Media Vorschau -->
-    <meta property="og:type" content="restaurant.restaurant">
-    <meta property="og:title" content="TENDUR Wesseling | Holzkohlegrill &amp; Tradition">
-    <meta property="og:description" content="Saftige Grillgerichte und ofenfrisches Brot aus dem Lehmofen. Besuchen Sie uns in Wesseling!">
-    <meta property="og:image" content="https://arslanalidogan-007.github.io/tendur-webseite/gal/IMG-20190612-WA0015.jpg">
-    
-    <!-- Tailwind CSS & Icons -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #f5f5f5; }
-        h1, h2, h3, .brand-font { font-family: 'Playfair Display', serif; }
-        /* Hintergrundbild auf ein existierendes Bild angepasst */
-        .hero-bg { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('gal/IMG-20190612-WA0015.jpg') center/cover; }
+        h1, h2, h3, h4, .brand-font { font-family: 'Playfair Display', serif; }
+        .hero-bg { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.92)), url('https://images.unsplash.com/photo-1544124499-58912cbddaad?auto=format&fit=crop&w=1200&q=80') center/cover; }
         .gold-text { color: #d4af37; }
         .bg-gold { background-color: #d4af37; }
         .card-blur { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .menu-item:hover .item-price { color: #d4af37; transform: scale(1.1); }
+        .menu-card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(212, 175, 55, 0.1); transition: all 0.3s ease; height: 100%; }
+        .menu-card:hover { border-color: rgba(212, 175, 55, 0.4); background: rgba(255, 255, 255, 0.04); transform: translateY(-3px); }
+        .price-tag { font-weight: 700; color: #d4af37; white-space: nowrap; font-size: 1.1rem; }
+        .category-title { position: relative; display: inline-block; padding-bottom: 8px; margin-bottom: 2rem; }
+        .category-title::after { content: ''; position: absolute; left: 0; bottom: 0; width: 60%; height: 2px; background: #d4af37; }
+        .allergen { font-size: 0.65rem; color: #666; font-style: normal; margin-left: 4px; }
     </style>
 </head>
 <body>
@@ -36,105 +31,325 @@
     <nav class="fixed w-full z-50 py-4 px-6 md:px-12 flex justify-between items-center card-blur border-b border-white/5">
         <div class="text-2xl brand-font font-bold tracking-widest text-white">TENDUR</div>
         <div class="hidden md:flex space-x-8 font-semibold uppercase text-[10px] tracking-[0.2em]">
-            <a href="#" class="hover:text-[#d4af37] transition">Start</a>
-            <a href="#speisekarte" class="hover:text-[#d4af37] transition">Speisekarte</a>
-            <a href="#galerie" class="hover:text-[#d4af37] transition">Galerie</a>
-            <a href="#kontakt" class="hover:text-[#d4af37] transition">Kontakt</a>
+            <a href="#" class="hover:text-[#d4af37] transition text-white">Start</a>
+            <a href="#speisekarte" class="hover:text-[#d4af37] transition text-white">Speisekarte</a>
+            <a href="#kontakt" class="hover:text-[#d4af37] transition text-white">Kontakt</a>
         </div>
-        <a href="tel:022363312160" class="md:hidden text-white"><i class="fas fa-phone"></i></a>
+        <a href="tel:022363312160" class="text-white px-5 py-2 bg-gold/20 rounded-full border border-gold/50 text-sm font-bold flex items-center gap-2">
+            <i class="fas fa-phone"></i> <span class="hidden sm:inline">02236 3312160</span>
+        </a>
     </nav>
 
-    <!-- Hero Sektion -->
-    <section class="relative h-screen flex items-center justify-center text-center px-4 hero-bg">
-        <div class="max-w-4xl">
-            <span class="gold-text uppercase tracking-[0.3em] text-xs font-bold mb-4 block">Wesseling &bull; Holzkohlegrill</span>
-            <h1 class="text-5xl md:text-8xl mb-6 leading-tight italic">Anatolische Gastfreundschaft</h1>
-            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light">
-                Traditionelle Gerichte, frisch im Lehmofen gebackenes Brot und saftige Spezialit&auml;ten vom echten Holzkohlegrill.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:022363312160" class="bg-gold text-black px-10 py-4 rounded-full font-bold hover:scale-105 transition shadow-lg shadow-gold/20">Tisch reservieren</a>
-                <a href="#speisekarte" class="border border-white/30 px-10 py-4 rounded-full font-bold hover:bg-white hover:text-black transition">Speisekarte</a>
-            </div>
+    <!-- Hero -->
+    <section class="relative h-[50vh] flex items-center justify-center text-center px-4 hero-bg">
+        <div class="max-w-4xl pt-16">
+            <h1 class="text-5xl md:text-7xl mb-4 italic text-white">Unsere Speisekarte</h1>
+            <p class="text-gold uppercase tracking-[0.4em] text-xs font-bold">Vollst&auml;ndiges Angebot &bull; Traditionell &bull; Frisch</p>
         </div>
     </section>
 
-    <!-- Speisekarte -->
-    <section id="speisekarte" class="py-24 px-6 bg-[#0c0c0c]">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-center text-4xl md:text-6xl mb-16 italic text-white">Unsere Spezialit&auml;ten</h2>
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="space-y-6">
-                    <h3 class="text-2xl gold-text border-b border-gold/20 pb-2 mb-4 brand-font">Grill-Highlights</h3>
-                    <div class="menu-item flex justify-between group">
-                        <span>Adana Kebap <p class="text-xs text-gray-500 italic">Hackfleischspie&szlig; pikanter Art</p></span>
-                        <span class="item-price font-bold transition">18.50 &euro;</span>
+    <!-- Hauptinhalt -->
+    <section id="speisekarte" class="py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- SUPPEN -->
+            <div class="mb-20">
+                <h2 class="text-3xl brand-font italic category-title">Suppen</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="menu-card p-6 rounded-2xl">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-xs text-gray-500">02</span>
+                                <h4 class="font-bold">Linsensuppe <em class="allergen">(a,c,g,i)</em></h4>
+                                <p class="text-xs text-gray-400 italic">Mercimek &Ccedil;orbas&inodot;</p>
+                            </div>
+                            <span class="price-tag">7,00 &euro;</span>
+                        </div>
                     </div>
-                    <div class="menu-item flex justify-between group">
-                        <span>Kuzu &Scedil;i&scedil; <p class="text-xs text-gray-500 italic">Zarter Lammspie&szlig;</p></span>
-                        <span class="item-price font-bold transition">21.90 &euro;</span>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-xs text-gray-500">06</span>
+                                <h4 class="font-bold">H&uuml;hnersuppe <em class="allergen">(a,c,g,i)</em></h4>
+                                <p class="text-xs text-gray-400 italic">Tavuk &Ccedil;orbas&inodot;</p>
+                            </div>
+                            <span class="price-tag">8,00 &euro;</span>
+                        </div>
                     </div>
-                </div>
-                <div class="space-y-6">
-                    <h3 class="text-2xl gold-text border-b border-gold/20 pb-2 mb-4 brand-font">Aus dem Ofen</h3>
-                    <div class="menu-item flex justify-between group">
-                        <span>Lahmacun <p class="text-xs text-gray-500 italic">T&uuml;rkische Pizza mit Salat</p></span>
-                        <span class="item-price font-bold transition">6.50 &euro;</span>
-                    </div>
-                    <div class="menu-item flex justify-between group">
-                        <span>Pide Mix <p class="text-xs text-gray-500 italic">Teigschiffchen mit versch. F&uuml;llungen</p></span>
-                        <span class="item-price font-bold transition">14.50 &euro;</span>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="text-xs text-gray-500">08</span>
+                                <h4 class="font-bold">Lammkopfsuppe <em class="allergen">(a,c,g,i)</em></h4>
+                                <p class="text-xs text-gray-400 italic">Kelle Pa&ccedil;a</p>
+                            </div>
+                            <span class="price-tag">8,00 &euro;</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="mt-12 text-center">
-                <a href="Speisekarte.pdf" target="_blank" class="text-xs gold-text uppercase tracking-widest font-bold border-b border-gold/40 hover:border-gold transition pb-1">Komplette Karte als PDF &ouml;ffnen</a>
+
+            <!-- VORSPEISEN -->
+            <div class="mb-20">
+                <h2 class="text-3xl brand-font italic category-title">Vorspeisen</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="menu-card p-6 rounded-2xl">
+                        <span class="text-xs text-gray-500">22</span>
+                        <div class="flex justify-between mb-2"><h4 class="font-bold">Gef. Weinbl&auml;tter</h4><span class="price-tag">6,50 &euro;</span></div>
+                        <p class="text-xs text-gray-400">5 St&uuml;ck (Sarma) mit Tzatziki <em class="allergen">(a,c,g,i,2,5,13)</em></p>
+                    </div>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <span class="text-xs text-gray-500">26</span>
+                        <div class="flex justify-between mb-2"><h4 class="font-bold">Antep Ezme</h4><span class="price-tag">6,00 &euro;</span></div>
+                        <p class="text-xs text-gray-400">W&uuml;rziger Tomaten-Paprika-Dip <em class="allergen">(a,1,2,13)</em></p>
+                    </div>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <span class="text-xs text-gray-500">30</span>
+                        <div class="flex justify-between mb-2"><h4 class="font-bold">Meze Teller (kl.)</h4><span class="price-tag">8,00 &euro;</span></div>
+                        <p class="text-xs text-gray-400">Kar&inodot;&scedil;&inodot;k Meze k&uuml;&ccedil;&uuml;k</p>
+                    </div>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <span class="text-xs text-gray-500">32</span>
+                        <div class="flex justify-between mb-2"><h4 class="font-bold">Meze Teller (gr.)</h4><span class="price-tag">12,00 &euro;</span></div>
+                        <p class="text-xs text-gray-400">Reichhaltige Meze-Auswahl</p>
+                    </div>
+                </div>
             </div>
+
+            <!-- SALATE -->
+            <div class="mb-20">
+                <h2 class="text-3xl brand-font italic category-title">Frische Salate</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="menu-card p-6 rounded-2xl">
+                        <div class="flex justify-between mb-2">
+                            <div><span class="text-xs text-gray-500">40</span><h4 class="font-bold">Coban Salatasi</h4></div>
+                            <span class="price-tag">7,50 &euro;</span>
+                        </div>
+                        <p class="text-xs text-gray-400 italic">Hirtensalat mit Tomaten, Gurken, Zwiebeln &amp; Petersilie</p>
+                    </div>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <div class="flex justify-between mb-2">
+                            <div><span class="text-xs text-gray-500">42</span><h4 class="font-bold">Gemischter Salat</h4></div>
+                            <span class="price-tag">7,50 &euro;</span>
+                        </div>
+                        <p class="text-xs text-gray-400 italic">Kar&inodot;&scedil;&inodot;k Salata</p>
+                    </div>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <div class="flex justify-between mb-2">
+                            <div><span class="text-xs text-gray-500">44</span><h4 class="font-bold">Thunfisch Salat</h4></div>
+                            <span class="price-tag">9,50 &euro;</span>
+                        </div>
+                        <p class="text-xs text-gray-400 italic">Ton Bal&inodot;kl&inodot; Salata</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GRILLGERICHTE -->
+            <div class="mb-20">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-8 gap-4">
+                    <h2 class="text-4xl brand-font italic gold-text">Vom Holzkohlegrill</h2>
+                    <p class="text-sm text-gray-500 italic max-w-md">Alle Grillgerichte werden mit Salat und wahlweise Pommes oder Reis serviert.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Grill Items -->
+                    <div class="menu-card p-6 rounded-2xl">
+                        <img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=500&q=80" alt="" class="w-full h-40 object-cover rounded-xl mb-4">
+                        <span class="text-xs text-gray-500">160</span>
+                        <div class="flex justify-between mb-2"><h4 class="font-bold text-xl uppercase">Adana Kebap</h4><span class="price-tag">16,90 &euro;</span></div>
+                        <p class="text-sm text-gray-400 mb-4">W&uuml;rziger Hackfleischspie&szlig; nach Art des Hauses.</p>
+                    </div>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <img src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=500&q=80" alt="" class="w-full h-40 object-cover rounded-xl mb-4">
+                        <span class="text-xs text-gray-500">161</span>
+                        <div class="flex justify-between mb-2"><h4 class="font-bold text-xl uppercase">Lammspie&szlig;</h4><span class="price-tag">20,50 &euro;</span></div>
+                        <p class="text-sm text-gray-400 mb-4 italic">Kuzu &Scedil;i&scedil; - Zart mariniertes Lammfleisch.</p>
+                    </div>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=500&q=80" alt="" class="w-full h-40 object-cover rounded-xl mb-4">
+                        <span class="text-xs text-gray-500">162</span>
+                        <div class="flex justify-between mb-2"><h4 class="font-bold text-xl uppercase">H&auml;hnchenspie&szlig;</h4><span class="price-tag">16,50 &euro;</span></div>
+                        <p class="text-sm text-gray-400 mb-4 italic">Tavuk &Scedil;i&scedil; - Saftige H&auml;hnchenbrust.</p>
+                    </div>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <span class="text-xs text-gray-500">166</span>
+                        <div class="flex justify-between mb-2"><h4 class="font-bold text-xl uppercase">Beyti Sarma</h4><span class="price-tag">19,50 &euro;</span></div>
+                        <p class="text-sm text-gray-400">Hackspie&szlig; (scharf) gerollt in d&uuml;nnem Brot mit Joghurt &amp; Tomatensauce.</p>
+                    </div>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <span class="text-xs text-gray-500">167</span>
+                        <div class="flex justify-between mb-2"><h4 class="font-bold text-xl uppercase">Tendur K&ouml;fte</h4><span class="price-tag">19,50 &euro;</span></div>
+                        <p class="text-sm text-gray-400">Herzhafte Frikadellen mit K&auml;sef&uuml;llung in Tomatensauce.</p>
+                    </div>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <span class="text-xs text-gray-500">168</span>
+                        <div class="flex justify-between mb-2"><h4 class="font-bold text-xl uppercase">Lammrippchen</h4><span class="price-tag">19,00 &euro;</span></div>
+                        <p class="text-sm text-gray-400 italic">Kuzu Kaburga - Knusprig gegrillt.</p>
+                    </div>
+                    <!-- PLATTEN -->
+                    <div class="menu-card p-8 rounded-3xl lg:col-span-3 border-gold/40 bg-gradient-to-r from-gold/5 to-transparent">
+                        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                            <div>
+                                <h4 class="text-3xl font-bold italic mb-4">Gemischter Grillteller</h4>
+                                <p class="text-gray-400 max-w-xl">Eine k&ouml;stliche Auswahl an Grillklassikern: Spie&szlig;e, Frikadellen und mehr für den maximalen Genuss.</p>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full md:w-auto">
+                                <div class="bg-black/60 p-4 rounded-2xl border border-white/10">
+                                    <span class="text-[10px] uppercase text-gray-500">Nr. 170 (1 Person)</span>
+                                    <div class="text-2xl gold-text font-bold">23,50 &euro;</div>
+                                </div>
+                                <div class="bg-gold p-4 rounded-2xl text-black">
+                                    <span class="text-[10px] uppercase font-bold">Nr. 172 (2 Personen)</span>
+                                    <div class="text-2xl font-bold">44,00 &euro;</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DÖNER & SPEZIAL -->
+            <div class="mb-20">
+                <h2 class="text-3xl brand-font italic category-title">D&ouml;ner Spezialit&auml;ten</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="menu-card p-6 rounded-2xl">
+                        <span class="text-xs text-gray-500">100</span>
+                        <div class="flex justify-between mb-2"><h4 class="font-bold">D&ouml;ner Tasche</h4><span class="price-tag">7,50 &euro;</span></div>
+                    </div>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <span class="text-xs text-gray-500">104</span>
+                        <div class="flex justify-between mb-2"><h4 class="font-bold">D&ouml;ner D&uuml;r&uuml;m</h4><span class="price-tag">8,50 &euro;</span></div>
+                    </div>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <span class="text-xs text-gray-500">110</span>
+                        <div class="flex justify-between mb-2"><h4 class="font-bold">D&ouml;ner Teller</h4><span class="price-tag">14,90 &euro;</span></div>
+                        <p class="text-xs text-gray-400">Mit Salat &amp; Beilage</p>
+                    </div>
+                    <div class="menu-card p-6 rounded-2xl border-gold/30">
+                        <span class="text-xs text-gray-500">112</span>
+                        <div class="flex justify-between mb-2"><h4 class="font-bold">Iskender Kebap</h4><span class="price-tag">17,50 &euro;</span></div>
+                        <p class="text-xs text-gray-400">D&ouml;nerfleisch auf Brot mit Joghurt</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PIDE & LAHMACUN -->
+            <div class="mb-20">
+                <h2 class="text-3xl brand-font italic category-title">Lehmofen Spezialit&auml;ten</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="menu-card p-6 rounded-2xl">
+                        <div class="flex justify-between mb-2">
+                            <div><span class="text-xs text-gray-500">60</span><h4 class="font-bold">Lahmacun (Normal)</h4></div>
+                            <span class="price-tag">6,00 &euro;</span>
+                        </div>
+                    </div>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <div class="flex justify-between mb-2">
+                            <div><span class="text-xs text-gray-500">70</span><h4 class="font-bold">Pide mit K&auml;se</h4></div>
+                            <span class="price-tag">12,50 &euro;</span>
+                        </div>
+                    </div>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <div class="flex justify-between mb-2">
+                            <div><span class="text-xs text-gray-500">72</span><h4 class="font-bold">Pide mit Sucuk</h4></div>
+                            <span class="price-tag">13,90 &euro;</span>
+                        </div>
+                    </div>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <div class="flex justify-between mb-2">
+                            <div><span class="text-xs text-gray-500">74</span><h4 class="font-bold">Pide mit Hackfleisch</h4></div>
+                            <span class="price-tag">13,50 &euro;</span>
+                        </div>
+                    </div>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <div class="flex justify-between mb-2">
+                            <div><span class="text-xs text-gray-500">80</span><h4 class="font-bold">Pide Kusbasi</h4></div>
+                            <span class="price-tag">15,50 &euro;</span>
+                        </div>
+                        <p class="text-xs text-gray-400 italic">Mit gew&uuml;rfeltem Lammfleisch</p>
+                    </div>
+                    <div class="menu-card p-6 rounded-2xl">
+                        <div class="flex justify-between mb-2">
+                            <div><span class="text-xs text-gray-500">84</span><h4 class="font-bold">Tendur Pide</h4></div>
+                            <span class="price-tag">16,00 &euro;</span>
+                        </div>
+                        <p class="text-xs text-gray-400 italic">Die Spezialit&auml;t des Hauses</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SCHNITZEL & VEGGIE -->
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Schnitzel -->
+                <div>
+                    <h2 class="text-3xl brand-font italic category-title">H&auml;hnchenschnitzel</h2>
+                    <p class="text-[10px] text-gray-500 mb-6 uppercase tracking-widest">Alle Schnitzel mit Salat &amp; wahlweise Pommes oder Reis</p>
+                    <div class="space-y-4">
+                        <div class="menu-card p-5 rounded-xl flex justify-between items-center">
+                            <div><span class="text-xs text-gray-500">46</span><h4 class="font-bold">Wiener Art</h4></div>
+                            <span class="gold-text font-bold">14,50 &euro;</span>
+                        </div>
+                        <div class="menu-card p-5 rounded-xl flex justify-between items-center">
+                            <div><span class="text-xs text-gray-500">48</span><h4 class="font-bold">J&auml;gerschnitzel</h4></div>
+                            <span class="gold-text font-bold">16,50 &euro;</span>
+                        </div>
+                        <div class="menu-card p-5 rounded-xl flex justify-between items-center">
+                            <div><span class="text-xs text-gray-500">52</span><h4 class="font-bold">Champignonrahmschnitzel</h4></div>
+                            <span class="gold-text font-bold">16,50 &euro;</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Veggie -->
+                <div>
+                    <h2 class="text-3xl brand-font italic category-title">Vegetarisch</h2>
+                    <div class="space-y-4">
+                        <div class="menu-card p-5 rounded-xl flex justify-between items-center">
+                            <div><span class="text-xs text-gray-500">34</span><h4 class="font-bold">Vegetarische Tasche</h4><p class="text-[10px] text-gray-500 italic">Salat, Weichk&auml;se &amp; Sauce</p></div>
+                            <span class="gold-text font-bold">5,00 &euro;</span>
+                        </div>
+                        <div class="menu-card p-5 rounded-xl flex justify-between items-center">
+                            <div><span class="text-xs text-gray-500">36</span><h4 class="font-bold">Vegetarische Rolle</h4></div>
+                            <span class="gold-text font-bold">6,00 &euro;</span>
+                        </div>
+                        <div class="menu-card p-5 rounded-xl flex justify-between items-center">
+                            <div><span class="text-xs text-gray-500">180</span><h4 class="font-bold">Falafel Sandwich</h4></div>
+                            <span class="gold-text font-bold">7,00 &euro;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Galerie -->
-    <section id="galerie" class="py-24 bg-[#0a0a0a]">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl mb-12 italic text-white">Impressionen</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <!-- Bildpfade exakt an GitHub-Dateinamen angepasst -->
-                <div class="aspect-square rounded-2xl overflow-hidden bg-gray-900 shadow-xl">
-                    <img src="gal/IMG-20190612-WA0015.jpg" alt="[Tendur Grill]" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+    <!-- Footer / Kontakt -->
+    <footer id="kontakt" class="py-20 bg-black border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-16">
+            <div class="text-center md:text-left">
+                <h4 class="brand-font text-3xl text-white mb-6 tracking-widest">TENDUR</h4>
+                <p class="text-gray-500 text-sm italic">Authentische anatolische K&uuml;che vom Holzkohlegrill. Wir legen Wert auf h&ouml;chste Qualit&auml;t und Frische.</p>
+                <div class="mt-8 flex justify-center md:justify-start gap-4 text-gold text-xl">
+                    <i class="fab fa-instagram hover:text-white transition cursor-pointer"></i>
+                    <i class="fab fa-facebook hover:text-white transition cursor-pointer"></i>
                 </div>
-                <div class="aspect-square rounded-2xl overflow-hidden bg-gray-900 shadow-xl">
-                    <img src="gal/IMG-20190612-WA0016.jpg" alt="[Frisches Brot]" class="w-full h-full object-cover hover:scale-110 transition duration-500">
-                </div>
-                <div class="aspect-square rounded-2xl overflow-hidden bg-gray-900 shadow-xl">
-                    <img src="gal/IMG-20190612-WA0017.jpg" alt="[Vorspeisen]" class="w-full h-full object-cover hover:scale-110 transition duration-500">
-                </div>
-                <div class="aspect-square rounded-2xl overflow-hidden bg-gray-900 shadow-xl">
-                    <img src="gal/IMG-20190612-WA0018.jpg" alt="[Fleischgerichte]" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+            </div>
+            <div class="text-center md:text-left">
+                <h4 class="text-gold font-bold mb-6 uppercase tracking-widest text-xs">Standort</h4>
+                <p class="text-gray-300 text-sm mb-2">Flach-Fengler-Str. 78</p>
+                <p class="text-gray-300 text-sm mb-6">50389 Wesseling</p>
+                <h4 class="text-gold font-bold mb-6 uppercase tracking-widest text-xs">Telefon</h4>
+                <p class="text-white text-xl font-bold italic">02236 3312160</p>
+            </div>
+            <div class="text-center md:text-left">
+                <h4 class="text-gold font-bold mb-6 uppercase tracking-widest text-xs">&Ouml;ffnungszeiten</h4>
+                <div class="space-y-2 text-sm">
+                    <p class="flex justify-between border-b border-white/5 pb-2"><span class="text-gray-500">Montag - Sonntag</span> <span class="text-white">10:30 - 23:00</span></p>
+                    <p class="text-gray-500 mt-4 italic">An Feiertagen ge&ouml;ffnet.</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Kontakt -->
-    <section id="kontakt" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-16">
-            <div>
-                <h2 class="text-4xl mb-8 italic text-white">Kontakt</h2>
-                <div class="space-y-6 text-gray-400">
-                    <p><i class="fas fa-map-marker-alt gold-text mr-4"></i> Flach-Fengler-Str. 78, 50389 Wesseling</p>
-                    <p><i class="fas fa-phone gold-text mr-4"></i> <a href="tel:022363312160" class="hover:text-white transition">02236 / 33 12 160</a></p>
-                    <p><i class="fas fa-clock gold-text mr-4"></i> T&auml;glich: 10:30 � 23:00 Uhr</p>
-                </div>
-            </div>
-            <div class="h-80 rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2522.569!2d6.9748!3d50.8268!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bf23773c330c67%3A0x6e9a6c9e0d1d1d1d!2sFlach-Fengler-Stra%C3%9Fe%2078%2C%2050389%20Wesseling!5e0!3m2!1sde!2sde!4v1620000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
+        <div class="mt-20 text-center border-t border-white/5 pt-10">
+            <p class="text-gray-700 text-[10px] uppercase tracking-widest">&copy; 2026 TENDUR Restaurant Wesseling. Alle Angaben ohne Gew&auml;hr.</p>
         </div>
-    </section>
-
-    <footer class="py-12 text-center text-gray-600 text-xs border-t border-white/5 bg-black">
-        <p class="brand-font text-xl tracking-[0.3em] text-white mb-6 uppercase">TENDUR</p>
-        <p>&copy; 2026 TENDUR Restaurant Wesseling. Alle Rechte vorbehalten.</p>
     </footer>
 
 </body>
